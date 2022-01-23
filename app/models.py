@@ -1,5 +1,3 @@
-from tkinter import CASCADE
-from typing import ContextManager
 from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import null, text
@@ -35,6 +33,6 @@ class Vote(Base):
     __tablename__ = "votes"
 
     user_id = Column(Integer, ForeignKey(
-        "users.id", ondelete=CASCADE), primary_key=True)
+        "users.id", ondelete="CASCADE"), primary_key=True)
     post_id = Column(Integer, ForeignKey(
-        "posts.id", ondelete=CASCADE), primary_key=True)
+        "posts.id", ondelete="CASCADE"), primary_key=True)
